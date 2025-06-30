@@ -1,0 +1,73 @@
+.dashboard-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.summary-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(80, 130, 255, 0.10);
+  padding: 24px 18px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 90px;
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+
+.summary-card:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 28px rgba(80, 130, 255, 0.16);
+}
+
+.summary-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.summary-value {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.summary-card.total .summary-value {
+  color: #4f8cff;
+}
+.summary-card.active .summary-value {
+  color: #43b581;
+}
+.summary-card.inactive .summary-value {
+  color: #ffb300;
+}
+.summary-card.failed .summary-value {
+  color: #f44336;
+}
+
+.summary-card.animate {
+  animation: card-pop 0.5s cubic-bezier(0.4, 0.2, 0.2, 1);
+  box-shadow: 0 8px 32px rgba(80, 130, 255, 0.18);
+}
+
+@keyframes card-pop {
+  0% {
+    transform: scale(1);
+    background: #fff;
+  }
+  20% {
+    transform: scale(1.07);
+    background: #e3f2fd;
+  }
+  60% {
+    transform: scale(0.97);
+    background: #fff;
+  }
+  100% {
+    transform: scale(1);
+    background: #fff;
+  }
+} 
